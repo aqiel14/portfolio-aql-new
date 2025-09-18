@@ -42,8 +42,6 @@ const Experience = () => {
   const { theme } = useTheme();
 
   switch (theme) {
-    case "apple":
-      return <ExperienceApple experiences={experiences} />;
     case "discord":
       return <ExperienceDiscord experiences={experiences} />;
     // case "spotify":
