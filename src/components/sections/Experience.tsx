@@ -82,7 +82,6 @@ const Experience = () => {
                           {exp.company} – {exp.location}
                         </p>
                         <p className="text-sm">{exp.period}</p>
-                        <p className="text-sm">{exp.type}</p>
                       </CardHeader>
                       <CardContent>
                         <ul className="list-disc list-inside space-y-2 text-muted-foreground">

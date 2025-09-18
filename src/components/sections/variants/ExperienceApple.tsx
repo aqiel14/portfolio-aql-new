@@ -18,7 +18,6 @@ const ExperienceApple = ({ experiences }: ExperienceAppleProps) => {
             {exp.company} · {exp.location}
           </p>
           <p className="text-sm text-gray-400 mb-2">{exp.period}</p>
-          <p className="text-md text-gray-500 italic mb-6">{exp.type}</p>
           <ul className="list-disc list-inside text-left max-w-2xl space-y-2 text-lg">
             {exp.details.map((detail, j) => (
               <li key={j}>{detail}</li>
