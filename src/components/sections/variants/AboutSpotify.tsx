@@ -21,7 +21,10 @@ const AboutSpotify = () => {
     "bg-gradient-to-r from-[#3B82F6] via-[#2563EB] to-[#1E40AF]", // Electric blue
   ];
   return (
-    <section className="min-h-screen relative overflow-hidden px-6 py-20 text-white bg-gradient-to-br from-[#1DB954] via-purple-600 to-pink-500 rounded-2xl">
+    <section
+      id="about"
+      className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6 py-20 text-white bg-gradient-to-br from-[#1DB954] via-purple-600 to-pink-500 rounded-2xl"
+    >
       {/* funky bg blobs */}
       <div className="absolute -top-20 -left-20 w-96 h-96 bg-pink-400 rounded-full blur-3xl opacity-50" />
       <div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-purple-800 rounded-full blur-3xl opacity-40" />

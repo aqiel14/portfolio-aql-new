@@ -13,6 +13,9 @@ import { Badge } from "../ui/badge";
 import { Code, GraduationCap, Languages } from "lucide-react";
 import AboutSpotify from "./variants/AboutSpotify";
 import { useTheme } from "@/providers/ThemeProvider";
+import AboutDiscord from "./variants/AboutDiscord";
+
+const about = {};
 
 export default function About() {
   const { theme } = useTheme();
@@ -20,9 +23,14 @@ export default function About() {
   switch (theme) {
     case "spotify":
       return <AboutSpotify />;
+    case "discord":
+      return <AboutDiscord />;
     default:
       return (
-        <section className="min-h-0 md:min-h-screen px-4 md:px-20 py-20 md:py-32">
+        <section
+          id="about"
+          className="min-h-0 md:min-h-screen px-4 md:px-20 py-20 md:py-32"
+        >
           <h2 className="text-3xl font-bold text-foreground text-center mb-12">
             About Me
           </h2>
@@ -77,7 +85,7 @@ export default function About() {
                   </CardHeader>
                   <CardContent className="text-card-foreground">
                     <ul className="list-disc list-inside space-y-2 ">
-                      <li>Bachelor of Information Systems, 3.41/4.00</li>
+                      <li>Bachelor of Information Systems</li>
                       <li>
                         Thesis Topic: Building a web-based Application For MSMEs
                         (UMKM) with MERN stack

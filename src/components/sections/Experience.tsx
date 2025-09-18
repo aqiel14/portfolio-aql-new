@@ -4,6 +4,7 @@ import { useTheme } from "@/providers/ThemeProvider";
 import { Briefcase } from "lucide-react";
 import ExperienceApple from "./variants/ExperienceApple";
 import ExperienceDiscord from "./variants/ExperienceDiscord";
+import ExperienceSpotify from "./variants/ExperienceSpotify";
 
 const Experience = () => {
   const experiences = [
@@ -13,7 +14,8 @@ const Experience = () => {
       period: "Nov 2023 - Nov 2024",
       role: "Full Stack Developer",
       details: [
-        "Worked on various projects with various clients using Next.js, PostgreSQL, React Query, and Prisma.",
+        "Assigned to develop the software IMS(Integrated Monitoring System) for PT. Harmoni Nasional Teknologi Indonesia, an ERP app to monitor their sales",
+        "Helped developed the software for BKM (PT Berkat Karimar Mandiri), an ERP app for handling logistics of their palm oil transportation",
       ],
     },
     {
@@ -45,7 +47,7 @@ const Experience = () => {
     case "discord":
       return <ExperienceDiscord experiences={experiences} />;
     // case "spotify":
-    //   return <ExperienceSpotify experiences={experiences} />
+    //   return <ExperienceSpotify experiences={experiences} />;
     default:
       return (
         <section id="experience" className="py-16 px-4 lg:min-h-screen">
@@ -67,9 +69,7 @@ const Experience = () => {
 
                   <div
                     className={`w-full lg:max-w-md ${
-                      idx % 2 === 0
-                        ? "lg:pr-8 lg:text-right"
-                        : "lg:pl-8 lg:text-left"
+                      idx % 2 === 0 ? "lg:pr-8 " : "lg:pl-8 "
                     }`}
                   >
                     <Card className="bg-card">

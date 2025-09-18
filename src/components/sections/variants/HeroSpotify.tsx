@@ -5,7 +5,10 @@ import React from "react";
 
 const HeroSpotify = () => {
   return (
-    <section className="min-h-screen bg-background text-foreground flex flex-col justify-center items-center px-6 md:px-20">
+    <section
+      id="home"
+      className="min-h-screen bg-background text-foreground flex flex-col justify-center items-center px-6 md:px-20"
+    >
       {/* Artist image */}
       <div className="relative w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden shadow-lg mb-6">
         <Image
@@ -28,14 +31,29 @@ const HeroSpotify = () => {
 
       {/* "Follow" button */}
       <div className=" flex flex-col  sm:flex-row gap-4">
-        <Button size="lg" className="px-6 py-3">
+        <Button
+          onClick={() => {
+            const el = document.getElementById("contact");
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }}
+          size="lg"
+          className="px-6 py-3"
+        >
           <SkipBack className="w-6 h-6" />
           Contact Me
         </Button>
-        <Button size="lg" variant="outline" className="px-6 py-3">
-          <FileDown className="h-6 w-6" />
-          My Resume
-        </Button>
+        <a
+          href="Mohammad Aqiel Ilhamy - Software Developer.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button size="lg" variant="outline" className="px-6 py-3">
+            <FileDown className="h-6 w-6" />
+            My Resume
+          </Button>
+        </a>
       </div>
     </section>
   );

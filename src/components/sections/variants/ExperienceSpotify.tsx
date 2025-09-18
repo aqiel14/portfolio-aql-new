@@ -1,18 +1,29 @@
 import { Experience } from "@/types/types";
+import Image from "next/image";
 import React from "react";
 
 type ExperienceVariantProps = {
   experiences: Experience[];
 };
 
-const ExperienceDiscord = ({ experiences }: ExperienceVariantProps) => {
-  const reactions = ["👍", "❤️", "🔥", "💯"];
-
-  const getRandomCount = () => Math.floor(Math.random() * 20) + 1; // random 1-20
-
+const ExperienceSpotify = ({ experiences }: ExperienceVariantProps) => {
   return (
-    <section id="experience" className="flex flex-col items-center px-4 py-10">
-      <h2 className="text-3xl font-bold mb-6">Experience</h2>
+    <section id="experience" className="flex flex-col items-center py-10">
+      <div className="flex justify-center gap-4">
+        <div className=" overflow-hidden border-1 border-primary shadow-lg">
+          <Image
+            src="/me.png"
+            alt="Your Name"
+            width="256"
+            height="256"
+            className="h-36 w-36 object-cover"
+          />
+        </div>
+        <div className="flex flex-col justify-end gap-4">
+          <h2 className="text-3xl font-bold mb-6">Experience</h2>
+          <p className="font-semibold">Aql</p>
+        </div>
+      </div>
 
       <div className="w-full max-w-3xl space-y-6">
         {experiences.map((exp, idx) => (
@@ -36,19 +47,6 @@ const ExperienceDiscord = ({ experiences }: ExperienceVariantProps) => {
                   <li key={i}>{detail}</li>
                 ))}
               </ul>
-
-              {/* Reactions */}
-              <div className="flex gap-2 mt-3">
-                {reactions.map((reaction, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-1 bg-[#36393f] px-2 py-1 rounded-full text-xs cursor-pointer hover:bg-[#4f545c]"
-                  >
-                    <span>{reaction}</span>
-                    <span>{getRandomCount()}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         ))}
@@ -57,4 +55,4 @@ const ExperienceDiscord = ({ experiences }: ExperienceVariantProps) => {
   );
 };
 
-export default ExperienceDiscord;
+export default ExperienceSpotify;

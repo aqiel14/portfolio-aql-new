@@ -8,9 +8,11 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const handleClick = (section: string) => {
-    console.log("Go to:", section);
-    // You can use router.push(`/path`) if you want page navigation
-    // or scrollIntoView if it’s single-page
+    const el = document.getElementById(section);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    setOpen(false); // close mobile menu after click
   };
 
   return (
@@ -25,11 +27,14 @@ export const Navbar = () => {
             <Button onClick={() => handleClick("home")} variant={"ghost"}>
               Home
             </Button>
-            <Button onClick={() => handleClick("projects")} variant={"ghost"}>
+            <Button onClick={() => handleClick("about")} variant={"ghost"}>
               About Me
             </Button>
-            <Button onClick={() => handleClick("about")} variant={"ghost"}>
+            <Button onClick={() => handleClick("experience")} variant={"ghost"}>
               Experience
+            </Button>
+            <Button onClick={() => handleClick("projects")} variant={"ghost"}>
+              Projects
             </Button>
             <Button onClick={() => handleClick("contact")} variant={"ghost"}>
               Contact
@@ -47,6 +52,7 @@ export const Navbar = () => {
 
           {/* Mobile Hamburger */}
           <div className="md:hidden flex items-center">
+            <ThemeSwitcher />
             {/* <ThemeSwitcher /> */}
             <button
               onClick={() => setOpen(!open)}
@@ -61,18 +67,30 @@ export const Navbar = () => {
       {/* Mobile Menu */}
       {open && (
         <div className="md:hidden px-2 pt-2 pb-4 flex flex-col gap-2 bg-background text-foreground">
-          <a href="#" className="hover:underline">
+          <div onClick={() => handleClick("home")} className="hover:underline">
             Home
-          </a>
-          <a href="#" className="hover:underline">
+          </div>
+          <div
+            onClick={() => handleClick("projects")}
+            className="hover:underline"
+          >
             Projects
-          </a>
-          <a href="#" className="hover:underline">
+          </div>
+          <div onClick={() => handleClick("about")} className="hover:underline">
             About
-          </a>
-          <a href="#" className="hover:underline">
+          </div>
+          <div
+            onClick={() => handleClick("experience")}
+            className="hover:underline"
+          >
+            Experience
+          </div>
+          <div
+            onClick={() => handleClick("contact")}
+            className="hover:underline"
+          >
             Contact
-          </a>
+          </div>
         </div>
       )}
     </nav>
