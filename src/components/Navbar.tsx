@@ -20,7 +20,9 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo / Brand */}
-          <div className="text-2xl font-bold">portfolio-aql</div>
+          <div className="text-lg md:text-2xl font-bold text-nowrap">
+            portfolio-aql
+          </div>
 
           {/* Desktop Links */}
           <div className="hidden md:flex gap-6 items-center">

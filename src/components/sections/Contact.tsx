@@ -155,7 +155,7 @@ const Contact = () => {
             <div className="flex flex-col">
               <p className="text-muted-foreground">Email</p>
               <p className="group-hover:underline text-lg">
-                aqiel_ilhamy@gmail.com
+                aqiel.ilhamy@gmail.com
               </p>
             </div>
           </div>

@@ -54,7 +54,7 @@ const HeroNotion = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button size="lg" variant="outline" className="px-6 py-3">
+              <Button size="lg" variant="outline" className="px-6 py-3 w-full">
                 <FileDown className="h-6 w-6" />
                 My Resume
               </Button>

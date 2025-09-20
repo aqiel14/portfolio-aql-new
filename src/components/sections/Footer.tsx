@@ -25,7 +25,7 @@ const Footer = () => {
             {/* Right side: socials */}
             <div className="flex gap-6">
               <a
-                href="mailto:aqiel_ilhamy@gmail.com"
+                href="mailto:aqiel.ilhamy@gmail.com"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Mail className="w-5 h-5" />
