@@ -72,16 +72,13 @@ const Contact = () => {
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 w-full max-w-5xl">
         {/* Left: Form Card */}
-        <Card className="">
-          <CardHeader>
-            <CardTitle>Send me a message!</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-8"
-              >
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <Card className="">
+              <CardHeader>
+                <CardTitle>Send me a message!</CardTitle>
+              </CardHeader>
+              <CardContent>
                 <FormField
                   control={form.control}
                   name="name"
@@ -129,15 +126,15 @@ const Contact = () => {
                     </FormItem>
                   )}
                 />
-              </form>
-            </Form>
-          </CardContent>
-          <CardFooter className="justify-end">
-            <Button type="submit" className="w-full">
-              Send
-            </Button>
-          </CardFooter>
-        </Card>
+              </CardContent>
+              <CardFooter className="justify-end">
+                <Button type="submit" className="w-full">
+                  Send
+                </Button>
+              </CardFooter>
+            </Card>
+          </form>
+        </Form>
 
         {/* Right: Contact Info Card */}
         <div className="flex flex-col gap-8 justify-center items-center text-xl w-full max-w-md md:px-0">
