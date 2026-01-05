@@ -3,6 +3,7 @@ import "./globals.css";
 import { manrope } from "./fonts";
 import { Navbar } from "@/components/Navbar";
 import Footer from "@/components/sections/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata = {
   title: "Aqiel | Personal Portfolio",
@@ -21,6 +22,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

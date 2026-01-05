@@ -9,11 +9,24 @@ import ExperienceSpotify from "./variants/ExperienceSpotify";
 const Experience = () => {
   const experiences = [
     {
+      company: "SMPxIT",
+      location: "Remote",
+      period: "Oct 2025 - Present",
+      role: "Frontend Developer (Freelance)",
+      details: [
+        "Developing and maintaining the company’s main business website",
+        "Building a job portal and blog platform and their respective CMS with Next.js",
+        "Implementing responsive and reusable UI components using Tailwind shadcn/ui",
+        "Collaborating with the team through Git and delivering features in an agile environment",
+      ],
+    },
+    {
       company: "Platon",
       location: "Jakarta, Indonesia",
       period: "Nov 2023 - Nov 2024",
       role: "Full Stack Developer",
       details: [
+        "Developed web applications for multiple clients using Next.js, React, PostgreSQL, Prisma, and React Query",
         "Assigned to develop the software IMS(Integrated Monitoring System) for PT. Harmoni Nasional Teknologi Indonesia, an ERP app to monitor their sales",
         "Helped developed the software for BKM (PT Berkat Karimar Mandiri), an ERP app for handling logistics of their palm oil transportation",
       ],
@@ -24,9 +37,9 @@ const Experience = () => {
       period: "Jan 2022 - Nov 2023",
       role: "Software Developer",
       details: [
-        "Was assigned to the project Akomate, an all-in-one Hotel management system with 21+ features (Accounting, Booking, Auditing, etc.).",
-        "Contributed to the project Ontego Traces (SAP Business Suite module) for logistics and delivery optimization.",
-        "Rewrote Ontego Traces backend APIs from Spring Boot to an entirely new Node.js + Express + TypeScript app.",
+        "Was assigned to the project Akomate,  an all-in-one hotel management system with 21+ features including Accounting, Booking, and Auditing, built using the MERN stack (MongoDB, Express, React, Node.js) with Redux for state management and Material UI for the interface.",
+        "Contributed to the project Ontego Traces  (traces.ontego.de), a fully integrated software solution for planning, tracking, and optimizing beverage delivery routes with automated delivery time notifications for end customers, using React for the frontend.",
+        "Rewrote backend API endpoints for Ontego Traces from Spring Boot to an entirely new Typescript+Node+Express app",
       ],
     },
     {

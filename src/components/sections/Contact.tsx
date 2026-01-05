@@ -26,6 +26,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, MapPin, PhoneIcon, Pin } from "lucide-react";
 import Link from "next/link";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is too short"),
@@ -54,14 +55,14 @@ const Contact = () => {
       });
 
       if (res.ok) {
-        alert("Message sent successfully 🚀");
+        toast.success("Message sent successfully!");
         form.reset();
       } else {
-        alert("Something went wrong ❌");
+        toast.error("Something went wrong ");
       }
     } catch (err) {
       console.error(err);
-      alert("Error sending message ❌");
+      toast.error("Error sending message ");
     }
   };
 
@@ -78,7 +79,7 @@ const Contact = () => {
               <CardHeader>
                 <CardTitle>Send me a message!</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-6">
                 <FormField
                   control={form.control}
                   name="name"
