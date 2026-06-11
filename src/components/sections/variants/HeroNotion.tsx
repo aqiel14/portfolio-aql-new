@@ -9,7 +9,12 @@ const HeroNotion = () => {
       id="home"
       className="flex justify-center min-h-0 md:min-h-[70vh] px-12 md:px-32  w-full py-10 md:py-32"
     >
-      <div className=" max-w-unset xl:max-w-[70%] 2xl:max-w-[50%] grid grid-cols-12 items-center text-center">
+ <div
+  className="
+    max-w-[1024px]
+    grid grid-cols-12 items-center text-center
+  "
+>
         <div className="col-span-12 md:col-span-7 flex justify-center order-1 md:order-2">
           <div className="rounded-full overflow-hidden border-4 border-primary shadow-lg">
             <Image

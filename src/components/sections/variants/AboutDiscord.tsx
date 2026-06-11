@@ -36,9 +36,10 @@ const AboutDiscord = () => {
               <Image
                 src="/me.png"
                 alt="Profile picture"
-                width={160}
-                height={160}
-                className="rounded-full border-4 border-foreground shadow-md mt-30 bg-yellow-500"
+                width={192}
+                height={192}
+                
+                className="rounded-full border-4 border-foreground shadow-md mt-[136px] bg-yellow-500 w-32 h-32 object-cover"
               />
             </CardHeader>
             <CardContent className="flex flex-col items-start py-20">
