@@ -11,9 +11,9 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "../ui/badge";
 import { Code, GraduationCap, Languages } from "lucide-react";
-import AboutSpotify from "./variants/AboutSpotify";
 import { useTheme } from "@/providers/ThemeProvider";
-import AboutDiscord from "./variants/AboutDiscord";
+import AboutSpotify from "./spotify/AboutSpotify";
+import AboutDiscord from "./discord/AboutDiscord";
 
 const about = {};
 
@@ -42,7 +42,7 @@ export default function About() {
                 alt="Your portrait"
                 width={320}
                 height={400}
-                className="rounded-2xl shadow-lg object-cover"
+                className="rounded-2xl shadow-lg object-cover w-48 h-72 md:w-80 md:h-[400px] border-4 border-primary shadow-lg"
               />
             </div>
 
@@ -59,7 +59,7 @@ export default function About() {
                     <CardTitle>
                       <Code className="w-5 h-5 text-primary" />
                     </CardTitle>
-                    <CardDescription className="text-foreground">
+                    <CardDescription className="text-foreground font-semibold">
                       Programming Languages
                     </CardDescription>
                   </CardHeader>
@@ -79,11 +79,11 @@ export default function About() {
                       {" "}
                       <GraduationCap className="w-5 h-5 text-primary" />
                     </CardTitle>
-                    <CardDescription className="text-foreground">
+                    <CardDescription className="text-foreground font-semibold">
                       Education
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="text-card-foreground">
+                  <CardContent className="text-card-foreground ">
                     <ul className="list-disc list-inside space-y-2 ">
                       <li>Bachelor of Information Systems</li>
                       <li>
@@ -98,8 +98,8 @@ export default function About() {
                     <CardTitle>
                       <Languages className="w-5 h-5 text-primary" />
                     </CardTitle>
-                    <CardDescription className="text-foreground">
-                      Natural (Human) Language
+                    <CardDescription className="text-foreground font-semibold">
+                      Spoken Languages
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="text-card-foreground">

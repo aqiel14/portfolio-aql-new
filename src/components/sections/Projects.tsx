@@ -4,19 +4,32 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/providers/ThemeProvider";
 
 const projects = [
+  {
+    title: "portfolio-aql",
+    url: "https://portfolio-aql.vercel.app/",
+    image: "/portfolio-aql.png", // replace with actual screenshot path
+    description:
+      "A personal portfolio and digital resume featuring custom-built themes to showcase my experience and design preferences in a fun, interactive way.",
+    tech: ["React", "Next.js", "Tailwind", "ShadCN","Framer Motion"],
+  },
   {
     title: "The Big Day",
     url: "https://thebigday.id",
     image: "/thebigday.png", // replace with actual screenshot path
     description:
       "A personal side-business platform offering client-based digital wedding invitations. Personally designed and developed various invitation themes — from traditional to modern — using React, Next.js, and Tailwind CSS.",
-    tech: ["React", "Next.js", "Tailwind"],
+    tech: ["React", "Next.js", "Tailwind","Framer Motion"],
   },
 ];
 
 export default function Projects() {
+
+   const { theme } = useTheme();
+
+
   return (
     <section id="projects" className="w-full px-6 md:px-20 py-16">
       <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center">
@@ -24,10 +37,10 @@ export default function Projects() {
       </h2>
 
       <div className="flex justify-center">
-        <div className="w-full max-w-lg">
+        <div className="w-full max-w-lg flex gap-4 items-center justify-center flex-col md:flex-row">
           {projects.map((project, idx) => (
-            <Card key={idx} className="overflow-hidden border shadow-sm">
-              <div className="relative w-full h-56 md:h-64">
+            <Card key={idx} className="overflow-hidden border shadow-sm md:min-w-[600px] md:h-[520px]">
+              <div className="relative w-full h-56 md:h-64 ">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -50,7 +63,7 @@ export default function Projects() {
                   {project.tech.map((tag, i) => (
                     <Badge
                       key={i}
-                      variant="secondary"
+                      variant={theme === 'discord' ? "default" : "secondary"}
                       className="rounded-full px-3 py-1 text-xs"
                     >
                       {tag}

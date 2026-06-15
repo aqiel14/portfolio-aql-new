@@ -1,9 +1,8 @@
 "use client";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import HeroNotion from "./variants/HeroNotion";
+
 import { useTheme } from "@/providers/ThemeProvider";
-import HeroSpotify from "./variants/HeroSpotify";
+import HeroSpotify from "./spotify/HeroSpotify";
+import HeroNotion from "./notion/HeroNotion";
 
 export default function Hero() {
   const { theme } = useTheme();

@@ -2,33 +2,45 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTheme } from "@/providers/ThemeProvider";
 import { Briefcase } from "lucide-react";
-import ExperienceApple from "./variants/ExperienceApple";
-import ExperienceDiscord from "./variants/ExperienceDiscord";
-import ExperienceSpotify from "./variants/ExperienceSpotify";
+import ExperienceDiscord from "./discord/ExperienceDiscord";
 
 const Experience = () => {
   const experiences = [
     {
-      company: "SMPxIT",
-      location: "Remote",
-      period: "Oct 2025 - Present",
-      role: "Frontend Developer (Freelance)",
+      company: "CODE.ID",
+      location: "Jakarta, Indonesia",
+      period: "Mar 2026 - Present",
+      role: "Frontend Developer",
       details: [
-        "Developing and maintaining the company’s main business website",
-        "Building a job portal and blog platform and their respective CMS with Next.js",
-        "Implementing responsive and reusable UI components using Tailwind shadcn/ui",
-        "Collaborating with the team through Git and delivering features in an agile environment",
+        "Developed and maintained the HVC (High Value Customer) Mini App within the MyTelkomsel ecosystem, implementing responsive user interfaces from Figma designs using React, TaroJS, Tailwind CSS, TypeScript, and Zustand.",
+"Integrated backend APIs and implemented business requirements to support features and data presentation within the mini app.",
+"Worked closely with QA engineers during testing and bug-fixing phases to ensure feature quality and resolve issues before release",
+
       ],
     },
+    {
+      company: "SMPxIT",
+      location: "Remote",
+      period: "Nov 2025 - Jan 2026",
+      role: "Frontend Developer (Freelance)",
+      details: [
+        "Developed and maintained the company’s main business website",
+"Built the company's job portal and blog platform and their respective CMS with Next.js",
+"Implemented responsive and reusable UI components using Tailwind shadcn/ui",
+"Collaborated with the team through Git and delivering features in an agile environment"
+      ],
+    },
+
     {
       company: "Platon",
       location: "Jakarta, Indonesia",
       period: "Nov 2023 - Nov 2024",
       role: "Full Stack Developer",
       details: [
-        "Developed web applications for multiple clients using Next.js, React, PostgreSQL, Prisma, and React Query",
-        "Assigned to develop the software IMS(Integrated Monitoring System) for PT. Harmoni Nasional Teknologi Indonesia, an ERP app to monitor their sales",
-        "Helped developed the software for BKM (PT Berkat Karimar Mandiri), an ERP app for handling logistics of their palm oil transportation",
+        "Developed full stack web applications for various clients using Next.js, React, PostgreSQL, Prisma, and Tanstack Query",
+        "Built responsive front-end interfaces and integrated them with backend APIs",
+        "Collaborated with designers to deliver production-ready features",
+        "Contributed across the full development lifecycle, in a solo and team environment from planning and development to deployment"
       ],
     },
     {

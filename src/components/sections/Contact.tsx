@@ -24,7 +24,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, MapPin, PhoneIcon, Pin } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, PhoneIcon,  } from "lucide-react";
 import Link from "next/link";
 import { toast } from "sonner";
 
@@ -142,7 +142,7 @@ const Contact = () => {
           <div className="flex gap-4 items-center w-full cursor-pointer hover:bg-card rounded-xl md:p-2 group">
             <PhoneIcon className="w-16 h-16 bg-card rounded-xl p-4 shrink-0" />
             <div className="flex flex-col">
-              <p className="text-muted-foreground">Phone</p>
+              <p className="text-muted-foreground">WhatsApp</p>
               <p className="group-hover:underline text-lg">
                 (+62) 857 0321 4447
               </p>
@@ -157,20 +157,20 @@ const Contact = () => {
               </p>
             </div>
           </div>
-          <a
-            href="https://www.linkedin.com/in/aqiel-ilhamy/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex gap-4 items-center w-full cursor-pointer hover:bg-card rounded-xl md:p-2 group "
-          >
-            <Linkedin className="w-16 h-16 bg-card rounded-xl p-4 shrink-0" />
-            <div className="flex flex-col">
-              <p className="text-muted-foreground">Linkedin</p>
-              <p className="group-hover:underline text-lg">
-                https://www.linkedin.com/in/aqiel-ilhamy/
-              </p>
-            </div>
-          </a>
+         <a
+  href="https://www.linkedin.com/in/aqiel-ilhamy/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex gap-4 items-center w-full cursor-pointer hover:bg-card rounded-xl md:p-2 group"
+>
+  <Linkedin className="w-16 h-16 bg-card rounded-xl p-4 shrink-0" />
+  <div className="flex flex-col">
+    <p className="text-muted-foreground text-sm">Linkedin</p>
+    <p className="group-hover:underline text-lg font-medium">
+      @aqiel-ilhamy
+    </p>
+  </div>
+</a>
           <a
             href="https://github.com/aqiel14"
             target="_blank"

@@ -2,7 +2,7 @@
 import { Separator } from "@/components/ui/separator";
 import { useTheme } from "@/providers/ThemeProvider";
 import { Github, Linkedin, Mail } from "lucide-react";
-import FooterSpotify from "./variants/FooterSpotify";
+import FooterSpotify from "./spotify/FooterSpotify";
 
 const Footer = () => {
   const { theme } = useTheme();
@@ -12,7 +12,7 @@ const Footer = () => {
       return <FooterSpotify />;
     default:
       return (
-        <footer className="w-full border-t bg-background">
+        <footer className="w-full border-t bg-background mt-4 md:mt-0">
           <div className="container mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Left side */}
             <div className="text-sm text-muted-foreground">
