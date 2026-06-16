@@ -15,8 +15,15 @@ export const Navbar = () => {
     setOpen(false); // close mobile menu after click
   };
 
+  // bg-gradient-to-r from-[#000080] via-[#0050A0] to-[#1084D0]
+
   return (
-    <nav className="sticky top-0 z-50  w-full bg-background text-foreground shadow-md">
+    <nav
+      className="sticky top-0 z-50  w-full 
+    
+    bg-navbar
+    text-foreground shadow-md"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo / Brand */}

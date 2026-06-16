@@ -24,9 +24,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, MapPin, PhoneIcon,  } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, PhoneIcon } from "lucide-react";
 import Link from "next/link";
 import { toast } from "sonner";
+import ThemedCardHeader from "../ThemedCardHeader";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is too short"),
@@ -76,9 +77,10 @@ const Contact = () => {
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <Card className="">
-              <CardHeader>
-                <CardTitle>Send me a message!</CardTitle>
-              </CardHeader>
+              <ThemedCardHeader
+                title={"Send me a message!"}
+                // icon={Briefcase}
+              />
               <CardContent className="space-y-6">
                 <FormField
                   control={form.control}
@@ -157,20 +159,20 @@ const Contact = () => {
               </p>
             </div>
           </div>
-         <a
-  href="https://www.linkedin.com/in/aqiel-ilhamy/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="flex gap-4 items-center w-full cursor-pointer hover:bg-card rounded-xl md:p-2 group"
->
-  <Linkedin className="w-16 h-16 bg-card rounded-xl p-4 shrink-0" />
-  <div className="flex flex-col">
-    <p className="text-muted-foreground text-sm">Linkedin</p>
-    <p className="group-hover:underline text-lg font-medium">
-      @aqiel-ilhamy
-    </p>
-  </div>
-</a>
+          <a
+            href="https://www.linkedin.com/in/aqiel-ilhamy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex gap-4 items-center w-full cursor-pointer hover:bg-card rounded-xl md:p-2 group"
+          >
+            <Linkedin className="w-16 h-16 bg-card rounded-xl p-4 shrink-0" />
+            <div className="flex flex-col">
+              <p className="text-muted-foreground text-sm">Linkedin</p>
+              <p className="group-hover:underline text-lg font-medium">
+                @aqiel-ilhamy
+              </p>
+            </div>
+          </a>
           <a
             href="https://github.com/aqiel14"
             target="_blank"

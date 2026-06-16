@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTheme } from "@/providers/ThemeProvider";
 import { Briefcase } from "lucide-react";
 import ExperienceDiscord from "./discord/ExperienceDiscord";
+import ThemedCardHeader from "../ThemedCardHeader";
 
 const Experience = () => {
   const experiences = [
@@ -13,9 +14,8 @@ const Experience = () => {
       role: "Frontend Developer",
       details: [
         "Developed and maintained the HVC (High Value Customer) Mini App within the MyTelkomsel ecosystem, implementing responsive user interfaces from Figma designs using React, TaroJS, Tailwind CSS, TypeScript, and Zustand.",
-"Integrated backend APIs and implemented business requirements to support features and data presentation within the mini app.",
-"Worked closely with QA engineers during testing and bug-fixing phases to ensure feature quality and resolve issues before release",
-
+        "Integrated backend APIs and implemented business requirements to support features and data presentation within the mini app.",
+        "Worked closely with QA engineers during testing and bug-fixing phases to ensure feature quality and resolve issues before release",
       ],
     },
     {
@@ -25,9 +25,9 @@ const Experience = () => {
       role: "Frontend Developer (Freelance)",
       details: [
         "Developed and maintained the company’s main business website",
-"Built the company's job portal and blog platform and their respective CMS with Next.js",
-"Implemented responsive and reusable UI components using Tailwind shadcn/ui",
-"Collaborated with the team through Git and delivering features in an agile environment"
+        "Built the company's job portal and blog platform and their respective CMS with Next.js",
+        "Implemented responsive and reusable UI components using Tailwind shadcn/ui",
+        "Collaborated with the team through Git and delivering features in an agile environment",
       ],
     },
 
@@ -40,7 +40,7 @@ const Experience = () => {
         "Developed full stack web applications for various clients using Next.js, React, PostgreSQL, Prisma, and Tanstack Query",
         "Built responsive front-end interfaces and integrated them with backend APIs",
         "Collaborated with designers to deliver production-ready features",
-        "Contributed across the full development lifecycle, in a solo and team environment from planning and development to deployment"
+        "Contributed across the full development lifecycle, in a solo and team environment from planning and development to deployment",
       ],
     },
     {
@@ -98,17 +98,15 @@ const Experience = () => {
                     }`}
                   >
                     <Card className="bg-card">
-                      <CardHeader>
-                        <CardTitle className="flex items-center gap-2">
+                      <ThemedCardHeader
+                        title={`${exp.company} – ${exp.location}`}
+                        icon={Briefcase}
+                      />
+                      <CardContent>
+                        <div className="flex gap-2 font-semibold">
                           <Briefcase className="w-5 h-5 text-primary" />
                           {exp.role}
-                        </CardTitle>
-                        <p className="text-sm text-muted-foreground">
-                          {exp.company} – {exp.location}
-                        </p>
-                        <p className="text-sm">{exp.period}</p>
-                      </CardHeader>
-                      <CardContent>
+                        </div>
                         <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                           {exp.details.map((item, i) => (
                             <li key={i}>{item}</li>

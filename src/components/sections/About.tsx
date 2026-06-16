@@ -14,6 +14,8 @@ import { Code, GraduationCap, Languages } from "lucide-react";
 import { useTheme } from "@/providers/ThemeProvider";
 import AboutSpotify from "./spotify/AboutSpotify";
 import AboutDiscord from "./discord/AboutDiscord";
+import { contentAbout } from "@/data";
+import ThemedCardHeader from "../ThemedCardHeader";
 
 const about = {};
 
@@ -53,63 +55,27 @@ export default function About() {
                 full-stack applications. I enjoy solving problems, creating
                 clean UI/UX, and learning new technologies.
               </p>
-              <div className="grid grid-cols-12 gap-4 ">
-                <Card className="col-span-12 md:col-span-4 bg-card">
-                  <CardHeader>
-                    <CardTitle>
-                      <Code className="w-5 h-5 text-primary" />
-                    </CardTitle>
-                    <CardDescription className="text-foreground font-semibold">
-                      Programming Languages
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="text-card-foreground">
-                    <ul className="list-disc list-inside space-y-2 ">
-                      <li>HTML</li>
-                      <li>CSS</li>
-                      <li>JavaScript</li>
-                      <li>React.js</li>
-                      <li>Next.js</li>
-                    </ul>
-                  </CardContent>
-                </Card>
-                <Card className="col-span-12 md:col-span-4 bg-card">
-                  <CardHeader>
-                    <CardTitle>
-                      {" "}
-                      <GraduationCap className="w-5 h-5 text-primary" />
-                    </CardTitle>
-                    <CardDescription className="text-foreground font-semibold">
-                      Education
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="text-card-foreground ">
-                    <ul className="list-disc list-inside space-y-2 ">
-                      <li>Bachelor of Information Systems</li>
-                      <li>
-                        Thesis Topic: Building a web-based Application For MSMEs
-                        (UMKM) with MERN stack
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-                <Card className="col-span-12 md:col-span-4 bg-card">
-                  <CardHeader>
-                    <CardTitle>
-                      <Languages className="w-5 h-5 text-primary" />
-                    </CardTitle>
-                    <CardDescription className="text-foreground font-semibold">
-                      Spoken Languages
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="text-card-foreground">
-                    <ul className="list-disc list-inside space-y-2 ">
-                      <li>Indonesian (Native Tongue)</li>
-                      <li>English (TOEFL ITP Score : 607)</li>
-                      <li>Japanese (N4-Level)</li>
-                    </ul>
-                  </CardContent>
-                </Card>
+              <div className="grid grid-cols-12 gap-4">
+                {contentAbout.map((card) => {
+                  const Icon = card.icon;
+
+                  return (
+                    <Card
+                      key={card.title}
+                      className="col-span-12 md:col-span-4 bg-card"
+                    >
+                      <ThemedCardHeader title={card.title} icon={Icon} />
+
+                      <CardContent className="text-card-foreground">
+                        <ul className="list-disc list-inside space-y-2">
+                          {card.items.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
               </div>
               <div>
                 <p>Familiar Technologies:</p>

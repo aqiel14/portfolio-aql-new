@@ -10,11 +10,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { motion } from "framer-motion";
+import Win98ThemeSwitcher from "./Win98ThemeSwitcher";
 
 const themes = [
   { value: "notion", label: "Notion" },
   { value: "discord", label: "Discord" },
   { value: "spotify", label: "Spotify" },
+  { value: "windows98", label: "Windows 98" },
 ];
 
 export default function ThemeSwitcher() {
@@ -33,33 +35,40 @@ export default function ThemeSwitcher() {
   };
 
   return (
-    <motion.div
-      animate={
-        glow
-          ? {
-              boxShadow: [
-                "0 0 0px rgba(0,0,0,0)",
-                "0 0 14px rgba(34,197,94,0.9)", // green-ish glow; change color if you want
-                "0 0 0px rgba(0,0,0,0)",
-              ],
-            }
-          : {}
-      }
-      transition={{ duration: 1.2, repeat: glow ? Infinity : 0 }}
-      className="rounded-lg"
-    >
-      <Select value={theme} onValueChange={handleChange}>
-        <SelectTrigger className="w-[180px] cursor-pointer">
-          <SelectValue placeholder="Select theme" />
-        </SelectTrigger>
-        <SelectContent>
-          {themes.map((t) => (
-            <SelectItem key={t.value} value={t.value}>
-              {t.label}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
-    </motion.div>
+    <>
+      {theme === "windows98" ? (
+        <Win98ThemeSwitcher theme={theme} onChange={handleChange} />
+      ) : (
+        <motion.div
+          animate={
+            glow
+              ? {
+                  boxShadow: [
+                    "0 0 0px rgba(0,0,0,0)",
+                    "0 0 14px rgba(34,197,94,0.9)", // green-ish glow; change color if you want
+                    "0 0 0px rgba(0,0,0,0)",
+                  ],
+                }
+              : {}
+          }
+          transition={{ duration: 1.2, repeat: glow ? Infinity : 0 }}
+          className="rounded-lg"
+        >
+          <Select value={theme} onValueChange={handleChange}>
+            <SelectTrigger className="w-[180px] cursor-pointer">
+              <SelectValue placeholder="Select theme" />
+            </SelectTrigger>
+
+            <SelectContent>
+              {themes.map((t) => (
+                <SelectItem key={t.value} value={t.value}>
+                  {t.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </motion.div>
+      )}
+    </>
   );
 }

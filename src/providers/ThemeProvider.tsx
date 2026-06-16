@@ -8,7 +8,7 @@ import {
   useEffect,
 } from "react";
 
-type Theme = "notion" | "discord" | "spotify" | "dev";
+type Theme = "notion" | "discord" | "spotify" | "windows98";
 
 const ThemeContext = createContext<{
   theme: Theme;
@@ -20,13 +20,35 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem("theme") as Theme | null;
-    if (saved) setThemeState(saved);
-    document.documentElement.className = saved ?? theme;
+    if (saved) {
+    setThemeState(saved);
+
+    document.documentElement.classList.remove(
+      "notion",
+      "discord",
+      "spotify",
+      "windows98"
+    );
+    
+
+    document.documentElement.classList.add(saved);
+        document.documentElement.dataset.theme = saved;
+
+  }
   }, []);
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
-    document.documentElement.className = newTheme;
+   document.documentElement.classList.remove(
+  "notion",
+  "discord",
+  "spotify",
+  "windows98"
+);
+
+document.documentElement.classList.add(newTheme);
+    document.documentElement.dataset.theme = newTheme;
+
     localStorage.setItem("theme", newTheme);
   };
 

@@ -8,6 +8,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-navbar: var(--navbar);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -118,6 +119,7 @@ body {
 :root,
 .notion {
   /* default theme = notion */
+  --navbar: oklch(1 0 0);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --primary: oklch(0.205 0 0);
@@ -129,17 +131,19 @@ body {
 }
 
 .discord {
+  --navbar: oklch(0.2 0.05 260);
   --background: oklch(0.2 0.05 260);
   --foreground: oklch(1 0 0);
   --primary: oklch(0.55 0.2 270);
   --primary-foreground: oklch(1 0 0);
   --card: oklch(0.28 0.05 260); /* darker gray card */
   --card-foreground: oklch(1 0 0); /* white text */
-  --font-sans: Manrope;
+  --font-sans: var(--font-discord);
   /* ... */
 }
 
 .spotify {
+  --navbar: oklch(0.14 0.03 150);
   --background: oklch(0.14 0.03 150); /* dark gray-black */
   --foreground: oklch(1 0 0); /* white text */
   --primary: oklch(0.74 0.24 140); /* Spotify green */
@@ -151,6 +155,144 @@ body {
   --muted: oklch(0.35 0.02 150); /* muted gray for subtle text */
   --muted-foreground: oklch(0.7 0 0); /* softer white */
   --font-sans: "Circular Std", "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+.windows98 {
+  /* Windows 98 classic */
+  --navbar: #bfbfbf;
+  --background: #008080;
+  --foreground: #ffffff;
+
+  --card: #bfbfbf; /* window face */
+  --card-foreground: #000000;
+
+  --primary: #000080; /* title bar navy */
+  --primary-foreground: #ffffff;
+
+  --muted: #808080;
+  --muted-foreground: #404040;
+
+  --border-light: #ffffff;
+  --border-dark: #808080;
+
+  --font-sans: var(--font-w98);
+}
+
+/* ==========================================
+   WINDOWS 98 BUTTONS
+   ========================================== */
+
+[data-theme="windows98"] button[data-slot="button"] {
+  border-radius: 0;
+
+  font-weight: normal;
+
+  box-shadow: none;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+}
+
+/* Pressed effect */
+[data-theme="windows98"] button[data-slot="button"]:active {
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+
+  transform: translate(1px, 1px);
+}
+
+/* ==========================================
+   PRIMARY
+   ========================================== */
+
+[data-theme="windows98"] button[data-slot="button"][data-variant="outline"] {
+  background: #000080;
+  color: white;
+}
+
+/* ==========================================
+   SECONDARY
+   ========================================== */
+
+[data-theme="windows98"] button[data-slot="button"][data-variant="default"] {
+  background: #c0c0c0;
+  color: black;
+}
+
+/* ==========================================
+   GHOST
+   ========================================== */
+
+[data-theme="windows98"] button[data-slot="button"][data-variant="ghost"] {
+  color: black;
+}
+
+/* ==========================================
+   LINK
+   ========================================== */
+
+[data-theme="windows98"] button[data-slot="button"][data-variant="link"] {
+  background: transparent;
+  color: #000080;
+
+  border: none;
+
+  text-decoration: underline;
+}
+
+/* ==========================================
+   WINDOWS 98 SELECT
+   ========================================== */
+
+[data-theme="windows98"] [data-slot="select-trigger"] {
+  border-radius: 0;
+  background: #ffffff;
+  color: black;
+
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+[data-theme="windows98"] [data-slot="select-content"] {
+  border-radius: 0;
+  background: #c0c0c0;
+  color: black;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+}
+
+[data-theme="windows98"] [data-slot="select-item"] {
+  border-radius: 0;
+}
+
+[data-theme="windows98"] [data-slot="select-item"][data-highlighted] {
+  background: #000080;
+  color: white;
+}
+
+[data-theme="windows98"] [data-slot="card"] {
+  background: #c0c0c0;
+
+  border-radius: 0;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
 }
 
 @layer base {
