@@ -96,21 +96,24 @@ export default function ThemedCardHeader({
   }
 
   return (
-    <CardHeader
-      className={cn(
-        alignHeader === "center" && "items-center text-center",
-        alignHeader === "right" && "items-end text-right",
-      )}
-    >
-      {Icon && (
-        <CardTitle>
-          <Icon className="h-5 w-5 text-primary" />
-        </CardTitle>
-      )}
+    <CardHeader>
+      <div
+        className={cn(
+          "pt-4 flex gap-2 items-center",
+          alignHeader === "center" && "justify-center text-center",
+          alignHeader === "right" && "justify-end text-right",
+        )}
+      >
+        {Icon && (
+          <CardTitle>
+            <Icon className="h-5 w-5 text-primary font-semibold" />
+          </CardTitle>
+        )}
 
-      <CardDescription className="text-foreground font-semibold">
-        {title}
-      </CardDescription>
+        <CardDescription className="text-foreground font-semibold">
+          {title}
+        </CardDescription>
+      </div>
     </CardHeader>
   );
 }
