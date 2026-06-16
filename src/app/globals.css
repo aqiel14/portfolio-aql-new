@@ -175,6 +175,8 @@ body {
   --border-light: #ffffff;
   --border-dark: #808080;
 
+  --muted-foreground: #000;
+
   --font-sans: var(--font-w98);
 }
 
@@ -293,6 +295,23 @@ body {
 
   border-right: 2px solid #808080;
   border-bottom: 2px solid #808080;
+}
+
+[data-theme="windows98"] [data-slot="form-control"] {
+  background: white;
+  color: black;
+
+  border-radius: 0;
+
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+
+  box-shadow:
+    inset 1px 1px 0 #404040,
+    inset -1px -1px 0 #dfdfdf;
 }
 
 @layer base {

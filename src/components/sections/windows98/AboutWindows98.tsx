@@ -1,44 +1,22 @@
 "use client";
-import Image from "next/image";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "../ui/badge";
-import { Code, GraduationCap, Languages } from "lucide-react";
-import { useTheme } from "@/providers/ThemeProvider";
-import AboutSpotify from "./spotify/AboutSpotify";
-import AboutDiscord from "./discord/AboutDiscord";
+
+import ThemedCardHeader from "@/components/ThemedCardHeader";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 import { contentAbout } from "@/data";
-import ThemedCardHeader from "../ThemedCardHeader";
-import AboutWindows98 from "./windows98/AboutWindows98";
+import { Briefcase } from "lucide-react";
+import Image from "next/image";
 
-const about = {};
-
-export default function About() {
-  const { theme } = useTheme();
-
-  switch (theme) {
-    case "spotify":
-      return <AboutSpotify />;
-    case "discord":
-      return <AboutDiscord />;
-    case "windows98":
-      return <AboutWindows98 />;
-    default:
-      return (
-        <section
-          id="about"
-          className="min-h-0 md:min-h-screen px-4 md:px-20 py-20 md:py-32"
-        >
-          <h2 className="text-3xl font-bold text-foreground text-center mb-12">
-            About Me
-          </h2>
+const AboutWindows98 = () => {
+  return (
+    <section id="about" className="px-4 md:px-20 py-20 md:py-32 ">
+      <Card className="bg-card max-w-5xl mx-auto">
+        <ThemedCardHeader
+          title={`About Me`}
+          icon={Briefcase}
+          controls={["close", "maximize", "minimize"]}
+        />
+        <CardContent>
           <div className="grid grid-cols-12 max-w-5xl mx-auto gap-4 md:gap-12 items-center">
             {/* Portrait */}
             <div className="flex col-span-12 md:col-span-4 justify-center">
@@ -106,7 +84,10 @@ export default function About() {
               </div>
             </div>
           </div>
-        </section>
-      );
-  }
-}
+        </CardContent>
+      </Card>
+    </section>
+  );
+};
+
+export default AboutWindows98;

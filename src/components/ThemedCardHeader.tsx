@@ -4,31 +4,24 @@ import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/providers/ThemeProvider";
 import { LucideIcon, X } from "lucide-react";
-import { ReactNode } from "react";
+
+type WindowControl = "minimize" | "maximize" | "close";
 
 interface ThemedCardHeaderProps {
   title: string;
   icon?: LucideIcon;
   alignHeader?: "left" | "center" | "right";
+  controls?: WindowControl[];
 }
 
-export default function ThemedCardHeader({
-  title,
-  icon: Icon,
-  alignHeader = "left",
-}: ThemedCardHeaderProps) {
-  const { theme } = useTheme();
+interface Win98WindowControlsProps {
+  controls: WindowControl[];
+}
 
-  if (theme === "windows98") {
-    return (
-      <div className="bg-gradient-to-r from-[#000080] to-[#1084D0] px-2 py-1 text-white">
-        <div className="flex items-center justify-between">
-          <div className="flex gap-1.5 items-center">
-            {Icon && <Icon className="h-2 w-2 text-white" />}
-            <span className="text-xs">{title}</span>
-          </div>
-          <div
-            className="
+const Win98ControlButton = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div
+      className="
         h-4
         w-4
 
@@ -47,10 +40,56 @@ export default function ThemedCardHeader({
         flex
         items-center
         justify-center
+
+        text-black
+        text-[16px]
+        leading-none
+        font-bold
       "
-          >
-            <X className="h-3 w-3 text-black stroke-[3]" />
+    >
+      {children}
+    </div>
+  );
+};
+
+const Win98WindowControls = ({ controls }: Win98WindowControlsProps) => {
+  return (
+    <div className="flex gap-1">
+      {controls.includes("minimize") && (
+        <Win98ControlButton>_</Win98ControlButton>
+      )}
+
+      {controls.includes("maximize") && (
+        <Win98ControlButton>□</Win98ControlButton>
+      )}
+
+      {controls.includes("close") && (
+        <Win98ControlButton>
+          <X />
+        </Win98ControlButton>
+      )}
+    </div>
+  );
+};
+
+export default function ThemedCardHeader({
+  title,
+  icon: Icon,
+  alignHeader = "left",
+  controls = ["close"],
+}: ThemedCardHeaderProps) {
+  const { theme } = useTheme();
+
+  if (theme === "windows98") {
+    return (
+      <div className="bg-gradient-to-r from-[#000080] to-[#1084D0] px-2 py-1 text-white">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-1.5">
+            {Icon && <Icon className="h-3 w-3 text-white" />}
+            <span className="text-xs">{title}</span>
           </div>
+
+          <Win98WindowControls controls={controls} />
         </div>
       </div>
     );
@@ -59,8 +98,8 @@ export default function ThemedCardHeader({
   return (
     <CardHeader
       className={cn(
-        alignHeader === "center" && "text-center items-center",
-        alignHeader === "right" && "text-right items-end",
+        alignHeader === "center" && "items-center text-center",
+        alignHeader === "right" && "items-end text-right",
       )}
     >
       {Icon && (

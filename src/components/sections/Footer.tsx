@@ -3,6 +3,7 @@ import { Separator } from "@/components/ui/separator";
 import { useTheme } from "@/providers/ThemeProvider";
 import { Github, Linkedin, Mail } from "lucide-react";
 import FooterSpotify from "./spotify/FooterSpotify";
+import Win98Footer from "./windows98/FooterWindows98";
 
 const Footer = () => {
   const { theme } = useTheme();
@@ -10,6 +11,8 @@ const Footer = () => {
   switch (theme) {
     case "spotify":
       return <FooterSpotify />;
+    case "windows98":
+      return <Win98Footer />;
     default:
       return (
         <footer className="w-full border-t bg-background mt-4 md:mt-0">

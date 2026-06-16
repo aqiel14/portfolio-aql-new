@@ -1,5 +1,13 @@
 import { Code, GraduationCap, Languages } from "lucide-react";
 
+export const navItems = [
+  { label: "Home", section: "home" },
+  { label: "About Me", section: "about" },
+  { label: "Experience", section: "experience" },
+  { label: "Projects", section: "projects" },
+  { label: "Contact", section: "contact" },
+];
+
 export const contentAbout = [
   {
     title: "Programming Languages",
