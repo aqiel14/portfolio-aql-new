@@ -16,7 +16,7 @@ const themes = [
   { value: "notion", label: "Notion" },
   { value: "discord", label: "Discord" },
   { value: "spotify", label: "Spotify" },
-  { value: "windows98", label: "Windows 98" },
+  { value: "windows98", label: "Windows 98", isNew: true },
 ];
 
 export default function ThemeSwitcher() {
@@ -62,7 +62,26 @@ export default function ThemeSwitcher() {
             <SelectContent>
               {themes.map((t) => (
                 <SelectItem key={t.value} value={t.value}>
-                  {t.label}
+                  <div className="flex items-center gap-2">
+                    <span>{t.label}</span>
+
+                    {t.isNew && (
+                      <span
+                        className="
+              px-1
+              py-[1px]
+              text-[10px]
+              leading-none
+              font-bold
+              text-white
+              bg-red-600
+              rounded-sm
+            "
+                      >
+                        NEW
+                      </span>
+                    )}
+                  </div>
                 </SelectItem>
               ))}
             </SelectContent>
