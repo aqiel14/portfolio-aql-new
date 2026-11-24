@@ -11,18 +11,18 @@ const projects = [
   {
     title: "portfolio-aql",
     url: "https://portfolio-aql.vercel.app/",
-    image: "/portfolio-aql.png", // replace with actual screenshot path
+    image: "/portfolio-aql1.png", // replace with actual screenshot path
     description:
       "A personal portfolio and digital resume featuring custom-built themes to showcase my experience and design preferences in a fun, interactive way.",
     tech: ["React", "Next.js", "Tailwind", "ShadCN", "Framer Motion"],
   },
   {
-    title: "The Big Day",
-    url: "https://thebigday.id",
-    image: "/thebigday.png", // replace with actual screenshot path
+    title: "Tangoboe",
+    url: "https://tangoboe.com",
+    image: "/tangoboe1.png", // replace with actual screenshot path
     description:
-      "A personal side-business platform offering client-based digital wedding invitations. Personally designed and developed various invitation themes — from traditional to modern — using React, Next.js, and Tailwind CSS.",
-    tech: ["React", "Next.js", "Tailwind", "Framer Motion"],
+      "A personal Japanese language learning platform for JLPT vocabulary, kanji, and grammar. Developed the full-stack application using Next.js, React, TypeScript, NestJS, Prisma, PostgreSQL, and Redis, including a custom quiz generation system supporting multiple question types and JLPT-level filtering",
+    tech: ["React", "Next.js", "Tailwind", "Nodejs", "NestJS", "Prisma", "PostgreSQL", "Redis"],
   },
 ];
 
@@ -36,11 +36,11 @@ export default function Projects() {
       </h2>
 
       <div className="flex justify-center">
-        <div className="w-full max-w-lg flex gap-4 items-center justify-center flex-col md:flex-row">
+        <div className="w-full max-w-lg flex gap-4 items-center justify-center flex-col md:flex-row md:items-stretch">
           {projects.map((project, idx) => (
             <Card
               key={idx}
-              className="overflow-hidden border shadow-sm md:min-w-[600px] md:h-[520px]"
+              className="overflow-hidden border shadow-sm md:min-w-[600px] md:min-h-[520px]"
             >
               {theme === "windows98" ? (
                 <>
@@ -49,7 +49,7 @@ export default function Projects() {
                     title={project.title}
                   />
 
-                  <div className="relative w-full h-56 md:h-64">
+                  <div className="relative w-full h-56 md:h-64 shrink-0">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -60,7 +60,7 @@ export default function Projects() {
                 </>
               ) : (
                 <>
-                  <div className="relative w-full h-56 md:h-64">
+                  <div className="relative w-full h-56 md:h-64 shrink-0">
                     <Image
                       src={project.image}
                       alt={project.title}
